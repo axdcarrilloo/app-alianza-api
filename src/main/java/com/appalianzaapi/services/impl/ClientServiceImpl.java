@@ -29,6 +29,7 @@ public class ClientServiceImpl implements ClientService {
                 clientDto.getEmail(), clientDto.getPhone(), FormatDate.formatDate(clientDto.getStartDate())
                 , FormatDate.formatDate(clientDto.getEndDate())).orElse(null);
         if(clientEntity != null) {
+            log.info("ClientServiceImpl.class - getAdvancedSearch() -> Consulting user in advanced search..!");
             return ClientMapper.converToDto(clientEntity);
         } else return null;
     }
